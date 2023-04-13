@@ -26,17 +26,21 @@
           <p>Apenas letras minúsculas e sem acento.</p>
         </div>
         <div class="buttonContainer">
-          <button class="encrypt">Criptografar</button>
-          <button class="decrypt">Descriptografar</button>
+          <button id="encrypt" class="encrypt" onclick="encrypt()">Criptografar</button>
+          <button id="decrypt" class="decrypt" onclick="decrypt()">Descriptografar</button>
         </div>
       </section>
       <section class="outputContainer">
-        <img src="./img/search.svg" alt="search" />
-        <p class="result">Nenhuma mensagem encontrada</p>
-        <p class="message">
-          Digite um texto que você deseja criptografar ou descriptografar.
-        </p>
+        <div class="noContent">
+          <img src="./img/search.svg" alt="search" />
+          <p class="result">Nenhuma mensagem encontrada</p>
+          <p class="command">
+            Digite um texto que você deseja criptografar ou descriptografar.
+          </p>
+        </div>
+        <p class="message"></p>
       </section>
     </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>

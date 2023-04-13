@@ -103,7 +103,7 @@ textarea:focus, input:focus, select:focus {
     width: 100%;
 }
 
-.result, .message {
+.result, .command, .message {
     width: 336px;
     text-align: center;
     font-family: 'Inter', sans-serif;
@@ -117,9 +117,30 @@ textarea:focus, input:focus, select:focus {
     margin-bottom: 16px;
 }
 
-.message {
+.command {
     font-weight: 400;
     font-size: 16px;
     color: #495057;
     line-height: 24px;
+}
+
+.message {
+    display: none;
+    font-weight: 400;
+    font-size: 24px;
+    color: #495057;
+    line-height: 36px;
+    margin: 32px;
+}
+
+.flex {
+    justify-content: initial;
+}
+
+.none {
+    display: none;
+}
+
+.show {
+    display: block;
 }
