@@ -26,8 +26,12 @@
           <p>Apenas letras minúsculas e sem acento.</p>
         </div>
         <div class="buttonContainer">
-          <button id="encrypt" class="encrypt" onclick="encrypt()">Criptografar</button>
-          <button id="decrypt" class="decrypt" onclick="decrypt()">Descriptografar</button>
+          <button id="encrypt" class="encrypt" onclick="encrypt()">
+            Criptografar
+          </button>
+          <button id="decrypt" class="decrypt" onclick="decrypt()">
+            Descriptografar
+          </button>
         </div>
       </section>
       <section class="outputContainer">
@@ -39,6 +43,8 @@
           </p>
         </div>
         <p class="message"></p>
+        <p class="copyInfo">Texto copiado para a área de transferência!</p>
+        <button id="copyButton" class="copyButton" onclick="copyMessage()">Copiar</button>
       </section>
     </main>
     <script src="./js/index.js"></script>

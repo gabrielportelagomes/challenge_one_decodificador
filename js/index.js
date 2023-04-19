@@ -1,11 +1,37 @@
+let inputHasChanged = false;
+const newInput = document.querySelector(".input");
+console.log(inputHasChanged);
+function handleInput() {
+  if (!inputHasChanged) {
+    inputHasChanged = true;
+
+    const outputContainer = document.querySelector(".outputContainer");
+    const noContentContainer = document.querySelector(".noContent");
+    const messageContainer = document.querySelector(".message");
+    const copyButton = document.querySelector(".copyButton");
+    const copyInfo = document.querySelector(".copyInfo");
+    
+    noContentContainer.classList.remove("none");
+    outputContainer.classList.remove("flex");
+    messageContainer.classList.remove("show");
+    copyButton.classList.remove("show");
+    copyInfo.classList.remove("show");
+  }
+}
+
+newInput.addEventListener("input", handleInput);
+newInput.addEventListener("click", handleInput);
+
 function showMessage(message) {
   const outputContainer = document.querySelector(".outputContainer");
   const noContentContainer = document.querySelector(".noContent");
   const messageContainer = document.querySelector(".message");
+  const copyButton = document.querySelector(".copyButton");
   messageContainer.textContent = message;
   noContentContainer.classList.add("none");
   outputContainer.classList.add("flex");
   messageContainer.classList.add("show");
+  copyButton.classList.add("show");
 }
 
 function encrypt() {
@@ -26,6 +52,8 @@ function encrypt() {
   }
 
   showMessage(encryptedText);
+  document.querySelector(".input").value = "";
+  inputHasChanged = false;
 }
 
 function decrypt() {
@@ -45,6 +73,8 @@ function decrypt() {
   );
 
   showMessage(decryptedText);
+  document.querySelector(".input").value = "";
+  inputHasChanged = false;
 }
 
 const input = document.querySelector(".input");
@@ -60,3 +90,10 @@ input.addEventListener("input", function (e) {
 
   e.target.value = lowercaseInput;
 });
+
+function copyMessage() {
+  const messageText = document.querySelector(".message").textContent;
+  const copyInfo = document.querySelector(".copyInfo");
+  copyInfo.classList.add("show");
+  navigator.clipboard.writeText(messageText);
+}
