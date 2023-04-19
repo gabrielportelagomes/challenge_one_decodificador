@@ -37,44 +37,52 @@ function showMessage(message) {
 function encrypt() {
   const inputText = document.querySelector(".input").value;
 
-  const encryptMap = {
-    e: "enter",
-    i: "imes",
-    a: "ai",
-    o: "ober",
-    u: "ufat",
-  };
-  let encryptedText = "";
-  for (let i = 0; i < inputText.length; i++) {
-    const letter = inputText[i];
-    const encryption = encryptMap[letter] || letter;
-    encryptedText += encryption;
-  }
+  if (inputText !== "") {
+    const encryptMap = {
+      e: "enter",
+      i: "imes",
+      a: "ai",
+      o: "ober",
+      u: "ufat",
+    };
+    let encryptedText = "";
+    for (let i = 0; i < inputText.length; i++) {
+      const letter = inputText[i];
+      const encryption = encryptMap[letter] || letter;
+      encryptedText += encryption;
+    }
 
-  showMessage(encryptedText);
-  document.querySelector(".input").value = "";
-  inputHasChanged = false;
+    showMessage(encryptedText);
+    document.querySelector(".input").value = "";
+    inputHasChanged = false;
+  } else {
+    alert("Insira um texto antes!");
+  }
 }
 
 function decrypt() {
   const inputText = document.querySelector(".input").value;
 
-  const decryptionMap = {
-    enter: "e",
-    imes: "i",
-    ai: "a",
-    ober: "o",
-    ufat: "u",
-  };
+  if (inputText !== "") {
+    const decryptionMap = {
+      enter: "e",
+      imes: "i",
+      ai: "a",
+      ober: "o",
+      ufat: "u",
+    };
 
-  let decryptedText = inputText.replace(
-    /enter|imes|ai|ober|ufat/g,
-    (match) => decryptionMap[match]
-  );
+    let decryptedText = inputText.replace(
+      /enter|imes|ai|ober|ufat/g,
+      (match) => decryptionMap[match]
+    );
 
-  showMessage(decryptedText);
-  document.querySelector(".input").value = "";
-  inputHasChanged = false;
+    showMessage(decryptedText);
+    document.querySelector(".input").value = "";
+    inputHasChanged = false;
+  } else {
+    alert("Insira um texto antes!");
+  }
 }
 
 const input = document.querySelector(".input");
