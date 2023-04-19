@@ -1,6 +1,6 @@
 let inputHasChanged = false;
 const newInput = document.querySelector(".input");
-console.log(inputHasChanged);
+
 function handleInput() {
   if (!inputHasChanged) {
     inputHasChanged = true;
@@ -10,7 +10,7 @@ function handleInput() {
     const messageContainer = document.querySelector(".message");
     const copyButton = document.querySelector(".copyButton");
     const copyInfo = document.querySelector(".copyInfo");
-    
+
     noContentContainer.classList.remove("none");
     outputContainer.classList.remove("flex");
     messageContainer.classList.remove("show");
